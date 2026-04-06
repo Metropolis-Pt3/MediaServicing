@@ -94,7 +94,7 @@ function Get-TimeStamp {
 }
 
 #Log path/name/location
-$LogPath = "C:\ESD\Logs\Driver_Media_Servicing.log"
+$LogPath = "C:\Windows\Logs\Driver_Media_Servicing.log"
 $LogDir = Split-Path $LogPath
 if (-not (Test-Path $LogDir)) {
     New-Item -ItemType Directory -Path $LogDir -Force | Out-Null
@@ -106,37 +106,37 @@ $64Bit=[Environment]::Is64BitProcess
 Write-Host "$(Get-TimeStamp) Is64BitProcess = $64Bit"
 
 # CREATE INSTALLATION MEDIA FOLDER STRUCTURE
-$DriverPath = "C:\ESD\Servicing\Drivers"
+$DriverPath = "C:\Windows\Deploy\Servicing\Drivers"
 $DriverDir = Split-Path $DriverPath
 if (-not (Test-Path $DriverDir)) {
     New-Item -ItemType Directory -Path $DriverDir -Force | Out-Null
 }
 
-$ArchPath = "C:\ESD\Servicing\Drivers\x64"
+$ArchPath = "C:\Windows\Deploy\Servicing\Drivers\x64"
 $ArchDir = Split-Path $ArchPath
 if (-not (Test-Path $ArchDir)) {
     New-Item -ItemType Directory -Path $ArchDir -Force | Out-Null
 }
 
-$CatPath = "C:\ESD\Servicing\Drivers\_Catalog"
+$CatPath = "C:\Windows\Deploy\Servicing\Drivers\_Catalog"
 $CatDir = Split-Path $CatPath
 if (-not (Test-Path $CatDir)) {
     New-Item -ItemType Directory -Path $CatDir -Force | Out-Null
 }
 
-$MediaPath = "C:\ESD\Servicing\Media"
+$MediaPath = "C:\Windows\Deploy\Servicing\Media"
 $MediaDir = Split-Path $MediaPath
 if (-not (Test-Path $MediaDir)) {
     New-Item -ItemType Directory -Path $MediaDir -Force | Out-Null
 }
 
-$ImagePath = "C:\ESD\Servicing\Images"
+$ImagePath = "C:\Windows\Deploy\Servicing\Images"
 $ImageDir = Split-Path $ImagePath
 if (-not (Test-Path $ImageDir)) {
     New-Item -ItemType Directory -Path $ImageDir -Force | Out-Null
 }
 
-$MntPath = "C:\ESD\Servicing\Mount"
+$MntPath = "C:\Windows\Deploy\Servicing\Mount"
 $MntDir = Split-Path $MntPath
 if (-not (Test-Path $MntDir)) {
     New-Item -ItemType Directory -Path $MntDir -Force | Out-Null
