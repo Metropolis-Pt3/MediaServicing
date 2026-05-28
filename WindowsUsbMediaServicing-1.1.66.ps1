@@ -24,7 +24,7 @@
   Media, then adds utilties, scripts and drivers to support Dell, HP, etc.
 
 .PARAMETERS
-  .\WindowsUsbMediaServicing-1.1.64.ps1
+  .\WindowsUsbMediaServicing-1.1.66.ps1
         *Information* = You must choose the drive letter where you want to install the servicing structure.
 
         -Folders = Creates the folder structure used for USB and ISO servicing.
@@ -47,7 +47,7 @@
 
     # For reoccuring driver updates, you can used multiple parameters:
 
-  .\WindowsUsbMediaServicing-1.1.64.ps1 -Gather -Boot -Install -UpdateMedia -Confirm 
+  .\WindowsUsbMediaServicing-1.1.66.ps1 -Gather -Boot -Install -UpdateMedia -Confirm 
 
 
 .NOTES/REFERENCES
