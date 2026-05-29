@@ -438,7 +438,7 @@ Copy-Item -Path "$ScriptsPath\AutopilotInfo-Online.ps1" -Destination "$MntPath\W
 Copy-Item -Path "$ToolsPath\CMTrace.exe" -Destination "$MntPath\Windows\System32" -Recurse
 
 # unmount image and commit changes
-dism /Unmount-Wim /MountDir:$MountPath /Commit
+dism /Unmount-Wim /MountDir:$MntPath /Commit
 
 #Unmount without commit, if mount does not complete properly
 #dism /Unmount-Wim /MountDir:C:\Temp\Virtual\Media\Mount /Discard
