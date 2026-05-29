@@ -206,7 +206,7 @@ if($Folders -eq $True)
         New-Item -ItemType Directory -Path $MediaDir -Force | Out-Null
     }
     
-    $ScriptsPath = "$Drive\Temp\Virtual\Media\Image"
+    $ScriptsPath = "$Drive\Temp\Virtual\Scripts"
     $ScriptsDir = Split-Path $ScriptsPath
     if (-not (Test-Path $ScriptsDir)) {
         New-Item -ItemType Directory -Path $ScriptsDir -Force | Out-Null
@@ -328,7 +328,7 @@ $MediaPath = "$Drive\Temp\Virtual\Media\Source"
 $DriverPath = "$Drive\Temp\Drivers"
 $ArchArmPath = "$Drive\Temp\Drivers\arm64"
 $ArchPath = "$Drive\Temp\Drivers\x64"
-$ScriptsPath = "$Drive\Temp\Virtual\Media\Image"
+$ScriptsPath = "$Drive\Temp\Virtual\Scripts"
 
 # variable testing
 $UsbRoot
