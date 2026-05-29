@@ -328,6 +328,7 @@ $MediaPath = "$Drive\Temp\Virtual\Media\Source"
 $DriverPath = "$Drive\Temp\Drivers"
 $ArchArmPath = "$Drive\Temp\Drivers\arm64"
 $ArchPath = "$Drive\Temp\Drivers\x64"
+$ToolsPath = "$Drive\Temp\Virtual\Tools"
 $ScriptsPath = "$Drive\Temp\Virtual\Scripts"
 
 # variable testing
@@ -341,6 +342,7 @@ $MediaPath
 $DriverPath
 $ArchArmPath
 $ArchPath
+$ToolsPath
 $ScriptsPath
 
 #===========COPY BOOT.WIM AND INSTALL.WIM=======================#
