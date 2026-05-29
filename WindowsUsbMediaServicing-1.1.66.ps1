@@ -205,8 +205,14 @@ if($Folders -eq $True)
     if (-not (Test-Path $MediaDir)) {
         New-Item -ItemType Directory -Path $MediaDir -Force | Out-Null
     }
+    
+    $ScriptsPath = "$Drive\Temp\Virtual\Media\Image"
+    $ScriptsDir = Split-Path $ScriptsPath
+    if (-not (Test-Path $ScriptsDir)) {
+        New-Item -ItemType Directory -Path $ScriptsDir -Force | Out-Null
+    }
 
-    $ImagePath = "D:\Temp\Virtual\Media\Image"
+    $ImagePath = "$Drive\Temp\Virtual\Media\Image"
     $ImageDir = Split-Path $ImagePath
     if (-not (Test-Path $ImageDir)) {
         New-Item -ItemType Directory -Path $ImageDir -Force | Out-Null
@@ -322,6 +328,7 @@ $MediaPath = "$Drive\Temp\Virtual\Media\Source"
 $DriverPath = "$Drive\Temp\Drivers"
 $ArchArmPath = "$Drive\Temp\Drivers\arm64"
 $ArchPath = "$Drive\Temp\Drivers\x64"
+$ScriptsPath = "$Drive\Temp\Virtual\Media\Image"
 
 # variable testing
 $UsbRoot
@@ -334,6 +341,7 @@ $MediaPath
 $DriverPath
 $ArchArmPath
 $ArchPath
+$ScriptsPath
 
 #===========COPY BOOT.WIM AND INSTALL.WIM=======================#
 #Only need to run this step once
@@ -423,9 +431,9 @@ if($Tools -eq $True)
 dism /Mount-Wim /WimFile:$ImagePath\Install.wim /Index:1 /MountDir:$MntPath
 
 # Copy scripts and tools .wim to Sources folder
-Copy-Item -Path "$ScriptsPath\AutopilotInfo.ps1" -Destination "$MountPath\Windows\System32" -Recurse
-Copy-Item -Path "$ScriptsPath\AutopilotInfo-Online.ps1" -Destination "$MountPath\Windows\System32" -Recurse
-Copy-Item -Path "$ToolsPath\CMTrace.exe" -Destination "$MountPath\Windows\System32" -Recurse
+Copy-Item -Path "$ScriptsPath\AutopilotInfo.ps1" -Destination "$MntPath\Windows\System32" -Recurse
+Copy-Item -Path "$ScriptsPath\AutopilotInfo-Online.ps1" -Destination "$MntPath\Windows\System32" -Recurse
+Copy-Item -Path "$ToolsPath\CMTrace.exe" -Destination "$MntPath\Windows\System32" -Recurse
 
 # unmount image and commit changes
 dism /Unmount-Wim /MountDir:$MountPath /Commit
