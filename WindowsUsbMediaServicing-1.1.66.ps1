@@ -420,7 +420,7 @@ dism /Split-Image /ImageFile:"$ImagePath\install.wim" /SWMFile:"$ImagePath\insta
 if($Tools -eq $True)
 {
 # mount install.wim image
-dism /Mount-Wim /WimFile:$ImagePath\Install.wim /Index:1 /MountDir:$MountPath
+dism /Mount-Wim /WimFile:$ImagePath\Install.wim /Index:1 /MountDir:$MntPath
 
 # Copy scripts and tools .wim to Sources folder
 Copy-Item -Path "$ScriptsPath\AutopilotInfo.ps1" -Destination "$MountPath\Windows\System32" -Recurse
