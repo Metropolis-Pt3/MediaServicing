@@ -417,9 +417,6 @@ dism /Image:$MntPath /Add-Driver /Driver:$DriverPath /Recurse
 # unmount image and commit changes
 dism /Unmount-Wim /MountDir:$MntPath /Commit
 
-# split image to be placed on usb
-dism /Split-Image /ImageFile:"$ImagePath\install.wim" /SWMFile:"$ImagePath\install.swm" /FileSize:3800
-
 #Unmount without commit, if mount does not complete properly
 #dism /Unmount-Wim /MountDir:C:\Temp\Virtual\Media\Mount /Discard
 
@@ -448,6 +445,9 @@ dism /Unmount-Wim /MountDir:$MntPath /Commit
 
 if($UpdateMedia -eq $True)
 {
+# split image to be placed on usb
+dism /Split-Image /ImageFile:"$ImagePath\install.wim" /SWMFile:"$ImagePath\install.swm" /FileSize:3800
+
 # copy boot.wim files to usb sources folder
 Copy-Item -Path "$ImagePath\boot.wim" -Destination "$UsbRoot\sources" -Recurse
 
