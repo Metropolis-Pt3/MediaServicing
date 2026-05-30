@@ -300,7 +300,7 @@ if ($UsbRoot.Count -gt 1) {
 
 } else {
     # Only one USB drive found
-    $UsbRoot = $UsbRoot[0] + "\"
+    $UsbRoot = $UsbRoot[0] + ":"
 }
 
 Write-Host "`nSelected USB drive: $UsbRoot"
