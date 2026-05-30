@@ -102,7 +102,7 @@ Param(
     [switch]$UpdateMedia = $False,
 
     [Parameter(Mandatory=$False,Position=9)]
-    [switch]$Confirm = $False
+    [switch]$Verify = $False
 )
 
 # VARIABLES (RUN)
@@ -457,7 +457,7 @@ Copy-Item -Path "$ImagePath\*.swm" -Destination "$UsbRoot\sources\" -Recurse
 
 #=======WINDOWS INSTALLATION MEDIA SERVICING CONFIRMATION=======#
 
-if($Confirm -eq $True)
+if($Verify -eq $True)
 {
 # gathers image info and indexes from usb media
 dism /Get-WimInfo /WimFile:$WimPath1
