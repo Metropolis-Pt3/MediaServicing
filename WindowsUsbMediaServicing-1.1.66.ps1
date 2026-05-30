@@ -251,7 +251,7 @@ if($Media -eq $True)
 # PROCURE MEDIA CREATION TOOL
 #url to Microsoft Media Creation Tool (Windows 11):
 $Url  = "https://go.microsoft.com/fwlink/?linkid=2156295"
-$Dest = $MediaPath
+$Dest = $MedPath
 
 #Check if file exists, delete it
 if (Test-Path $Dest) {
@@ -309,7 +309,7 @@ Write-Host "CLOSE THE MEDIA CREATION TOOL ONCE USB MEDIA" -ForegroundColor Cyan
 Write-Host "IS PROVISIONED TO CONTINUE" -ForegroundColor Cyan
 
 # CREATE USB INSTALLATION MEDIA FROM MEDIA CREATION TOOL
-$MediaTool = "$MediaPath\MediaCreationTool.exe"
+$MediaTool = "$MedPath\MediaCreationTool.exe"
 Start-Process $MediaTool -Wait
 }
 
